@@ -52,7 +52,7 @@ void recursiveStrat_increasing(int city1, int city2, t_dataTracks Tracks, int Cu
 		}
 	}	
 	else{	
-		for(int i=city1; i<city2+3 && i<35; i++){
+		for(int i=city1; i<city2+3 && i<36; i++){
 			if( Tracks.lengthTracks[city1][i] > 0 && ((Tracks.takenTracks[city1][i] == 0)|| (Tracks.takenTracks[city1][i] == 1 ))){
 				comparelist[CurrentLength].city1 = city1;
 				comparelist[CurrentLength].city2 = i;
@@ -158,14 +158,14 @@ void LessWagon(int city1, int city2, t_dataTracks Tracks, int CurrentLength, int
 	}
 }*/	
 	
-void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObjective[][35], t_dataPlayer dataPlayer, int number){
+void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObjective[][36], t_dataPlayer dataPlayer, int number){
 
 	int a = city1;
 	int b = city2;
 	int temp = city2;
 	
-	int minLength_increasing = 35;
-	int minLength_decreasing = 35;	
+	int minLength_increasing = 36;
+	int minLength_decreasing = 36;	
 	
 	int Increasing_score = 0;
 	int Decreasing_score = 0;
@@ -174,24 +174,24 @@ void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObject
 	int currentscore = 0;
 	
 	/*
-	int minLength_LessWagon = 35;
+	int minLength_LessWagon = 36;
 	int LessWagon_score = 0;
 	int minWagon = 100;
 	int CurrentWagon = 0;
 	int Compare_wagon = 0;
 	int Compare_score = 0;
-	t_objective listObjective_LessWagon[35];
+	t_objective listObjective_LessWagon[36];
 	*/
 	
-	t_objective listObjective_increasing[35];
-	t_objective listObjective_decreasing[35];	
-	t_objective comparelistObjective[35];
+	t_objective listObjective_increasing[36];
+	t_objective listObjective_decreasing[36];	
+	t_objective comparelistObjective[36];
 	
 	if(a > b){
 		b = city1;
 		a = temp;
 	}
-	for(int i=0; i<35; i++){
+	for(int i=0; i<36; i++){
 		listObjective_increasing[i].city1 = 0;
 		listObjective_increasing[i].city2 = 0;
 		listObjective_increasing[i].score = 0;
@@ -243,7 +243,7 @@ void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObject
 			BestlistObjective[number][i].city2 = listObjective_LessWagon[i].city2;
 			BestlistObjective[number][i].score = listObjective_LessWagon[i].score;
 		}
-		for(int i=minLength_LessWagon; i<35; i++){
+		for(int i=minLength_LessWagon; i<36; i++){
 			BestlistObjective[number][i].city1 = 0;
 			BestlistObjective[number][i].city2 = 0;
 			BestlistObjective[number][i].score = 0;
@@ -255,7 +255,7 @@ void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObject
 void NewObjective(t_move* move, t_dataPlayer dataPlayer, t_dataTracks Tracks, int tabObjective[3]){
 	
 	t_objective temp[3]; 
-	t_objective pathObjective[3][35];
+	t_objective pathObjective[3][36];
 	int TotalScore[] = {0, 0, 0};
 	int TotalWagon[] = {0, 0, 0};
 	float ScorePerWagon[] = {0, 0, 0};
@@ -349,7 +349,7 @@ void NewObjective(t_move* move, t_dataPlayer dataPlayer, t_dataTracks Tracks, in
 	}
 }
 				
-void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataMap dataMap, t_dataTracks Tracks, t_objective Bestpath[][35]){
+void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataMap dataMap, t_dataTracks Tracks, t_objective Bestpath[][36]){
 
 	int CheckAllObjective = 1;	/* 1 if we completed all our objective, else 0 */
 	int tabObjective[3];
@@ -404,7 +404,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 		
 	else{
 		// ####################
-		for(int i=0; Bestpath[Index][i].score != 0 && i<35; i++){
+		for(int i=0; Bestpath[Index][i].score != 0 && i<36; i++){
 			if(Tracks.takenTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] != 1){
 				if(Tracks.colorTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] == MULTICOLOR){
 					for(int j=1; j<9; j++){
@@ -500,7 +500,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 			}
 		}				
 		
-		for(int i=0; Bestpath[Index][i].score != 0 && i<35; i++){
+		for(int i=0; Bestpath[Index][i].score != 0 && i<36; i++){
 			if( Tracks.takenTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] != 1){					
 				for(int j=0; j<5; j++){
 					if(dataMap.faceUp[j] != 9){
@@ -527,11 +527,11 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 	
 		for(int k=Index+1; k<dataPlayer.Player[dataPlayer.num_player].nb_objectif; k++){
 			if(dataPlayer.Player[dataPlayer.num_player].completedobjective[k] == 0){
-				for(int i=0; Bestpath[k][i].score != 0 && i<35; i++){
+				for(int i=0; Bestpath[k][i].score != 0 && i<36; i++){
 					if(Tracks.takenTracks[Bestpath[k][i].city1][Bestpath[k][i].city2] != 1){
 					
 						NotInIndex = 0;
-						for(int j=0; Bestpath[Index][j].score != 0 && j<35; j++){
+						for(int j=0; Bestpath[Index][j].score != 0 && j<36; j++){
 							if(Tracks.takenTracks[Bestpath[Index][j].city1][Bestpath[Index][j].city2] != 1 && Tracks.colorTracks[Bestpath[Index][j].city1][Bestpath[Index][j].city2] == Tracks.colorTracks[Bestpath[k][i].city1][Bestpath[k][i].city2]){
 								NotInIndex = 1;
 							}
@@ -572,7 +572,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 	
 	for(int k=Index; k<dataPlayer.Player[dataPlayer.num_player].nb_objectif; k++){
 		if(dataPlayer.Player[dataPlayer.num_player].completedobjective[k] == 0){
-			for(int i=0; Bestpath[k][i].score != 0 && i<35; i++){
+			for(int i=0; Bestpath[k][i].score != 0 && i<36; i++){
 				if( Tracks.takenTracks[Bestpath[k][i].city1][Bestpath[k][i].city2] != 1){					
 					for(int j=0; j<5; j++){
 						if(dataMap.faceUp[j] != 9){

@@ -72,7 +72,7 @@ void InitMap(t_dataMap* dataMap, t_dataPlayer* dataPlayer, t_dataTracks* dataTra
 	
 }
 
-void InitTracks(t_dataMap* dataMap, t_dataTracks* dataTracks, t_objective Bestpath[][35]){
+void InitTracks(t_dataMap* dataMap, t_dataTracks* dataTracks, t_objective Bestpath[][36]){
 
 	/* Init the struct dataTracks at the beginning */
 

@@ -18,7 +18,7 @@ int main(){
 	t_return_code return_code;
 	
 	t_objective temp_objective[3];
-	t_objective Bestpath[20][35];
+	t_objective Bestpath[20][36];
 	
 	//InitGame(&dataMap, &dataPlayer, &dataTracks);
 	

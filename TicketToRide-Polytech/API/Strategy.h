@@ -9,11 +9,11 @@ void recursiveStrat_decreasing(int city1, int city2, t_dataTracks Tracks, int Cu
 
 void LessWagon(int city1, int city2, t_dataTracks Tracks, int CurrentLength, int *minLength, t_objective listObjective[], t_objective comparelist[], int* bestscore, int currentscore, int *minWagon, int CurrentWagon, t_dataPlayer dataPlayer);
 
-void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObjective[][35], t_dataPlayer dataPlayer, int number);
+void Strat(int city1, int city2, t_dataTracks Tracks, t_objective BestlistObjective[][36], t_dataPlayer dataPlayer, int number);
 /* Compared the result of recursiveStrat_increasing and recursiveStrat_decreasing and store the best one in BestlistObjective */
 
 void NewObjective(t_move* move, t_dataPlayer dataPlayer, t_dataTracks Tracks, int tabObjective[3]);
 /* Fill tabObjective and choose if we take the objective or not */
 
-void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataMap dataMap, t_dataTracks Tracks, t_objective Bestpath[][35]);
+void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataMap dataMap, t_dataTracks Tracks, t_objective Bestpath[][36]);
 /* Take the choice for the move */

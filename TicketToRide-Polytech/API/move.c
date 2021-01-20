@@ -152,7 +152,7 @@ void EditOpponnentMove(t_move* move, t_dataPlayer* dataPlayer, t_dataTracks* dat
 	}
 }
 
-void CheckCompletedObjective(t_dataPlayer* dataPlayer, t_dataTracks dataTracks, t_objective Bestpath[][35]){
+void CheckCompletedObjective(t_dataPlayer* dataPlayer, t_dataTracks dataTracks, t_objective Bestpath[][36]){
 	
 	/* Edit if we completed an objective */
 	

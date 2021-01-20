@@ -10,5 +10,5 @@ void Connect();
 void InitMap(t_dataMap* dataMap, t_dataPlayer* dataPlayer, t_dataTracks* dataTracks);
 /* Initialize the map et bot */
 
-void InitTracks(t_dataMap* dataMap, t_dataTracks* dataTracks, t_objective Bestpath[][35]);
+void InitTracks(t_dataMap* dataMap, t_dataTracks* dataTracks, t_objective Bestpath[][36]);
 /* Initialize our data at the beginning */
