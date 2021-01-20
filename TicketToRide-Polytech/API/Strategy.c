@@ -52,7 +52,7 @@ void recursiveStrat_increasing(int city1, int city2, t_dataTracks Tracks, int Cu
 		}
 	}	
 	else{	
-		for(int i=city1; i<city2+3 && i<36; i++){
+		for(int i=city1; i<city2+3 && i<35; i++){
 			if( Tracks.lengthTracks[city1][i] > 0 && ((Tracks.takenTracks[city1][i] == 0)|| (Tracks.takenTracks[city1][i] == 1 ))){
 				comparelist[CurrentLength].city1 = city1;
 				comparelist[CurrentLength].city2 = i;
@@ -404,7 +404,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 		
 	else{
 		// ####################
-		for(int i=0; Bestpath[Index][i].score != 0 && i<36; i++){
+		for(int i=0; Bestpath[Index][i].score != 0 && i<35; i++){
 			if(Tracks.takenTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] != 1){
 				if(Tracks.colorTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] == MULTICOLOR){
 					for(int j=1; j<9; j++){
@@ -500,7 +500,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 			}
 		}				
 		
-		for(int i=0; Bestpath[Index][i].score != 0 && i<36; i++){
+		for(int i=0; Bestpath[Index][i].score != 0 && i<35; i++){
 			if( Tracks.takenTracks[Bestpath[Index][i].city1][Bestpath[Index][i].city2] != 1){					
 				for(int j=0; j<5; j++){
 					if(dataMap.faceUp[j] != 9){
@@ -527,11 +527,11 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 	
 		for(int k=Index+1; k<dataPlayer.Player[dataPlayer.num_player].nb_objectif; k++){
 			if(dataPlayer.Player[dataPlayer.num_player].completedobjective[k] == 0){
-				for(int i=0; Bestpath[k][i].score != 0 && i<36; i++){
+				for(int i=0; Bestpath[k][i].score != 0 && i<35; i++){
 					if(Tracks.takenTracks[Bestpath[k][i].city1][Bestpath[k][i].city2] != 1){
 					
 						NotInIndex = 0;
-						for(int j=0; Bestpath[Index][j].score != 0 && j<36; j++){
+						for(int j=0; Bestpath[Index][j].score != 0 && j<35; j++){
 							if(Tracks.takenTracks[Bestpath[Index][j].city1][Bestpath[Index][j].city2] != 1 && Tracks.colorTracks[Bestpath[Index][j].city1][Bestpath[Index][j].city2] == Tracks.colorTracks[Bestpath[k][i].city1][Bestpath[k][i].city2]){
 								NotInIndex = 1;
 							}
@@ -572,7 +572,7 @@ void Fake_IA(t_move* move, t_move* OurLastMove, t_dataPlayer dataPlayer, t_dataM
 	
 	for(int k=Index; k<dataPlayer.Player[dataPlayer.num_player].nb_objectif; k++){
 		if(dataPlayer.Player[dataPlayer.num_player].completedobjective[k] == 0){
-			for(int i=0; Bestpath[k][i].score != 0 && i<36; i++){
+			for(int i=0; Bestpath[k][i].score != 0 && i<35; i++){
 				if( Tracks.takenTracks[Bestpath[k][i].city1][Bestpath[k][i].city2] != 1){					
 					for(int j=0; j<5; j++){
 						if(dataMap.faceUp[j] != 9){

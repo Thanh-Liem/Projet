@@ -36,7 +36,7 @@ void InitPlayer(t_dataPlayer* dataPlayer, t_dataMap* dataMap){
 void InitGame(t_dataMap* dataMap, t_dataPlayer* dataPlayer, t_dataTracks* dataTracks){
 	
 	/* Connect to server */
-	connectToServer("li1417-56.members.linode.com", 6789, "T_bot");
+	connectToServer("li1417-56.members.linode.com", 1234, "T_bot");
 	printf("You are in the server\n");
 	
 	/* Collect data and wait for a game */
@@ -54,14 +54,14 @@ void InitGame(t_dataMap* dataMap, t_dataPlayer* dataPlayer, t_dataTracks* dataTr
 void Connect(){
 	/* just for connect to server */
 
-	connectToServer("li1417-56.members.linode.com", 6789, "T_bot");
+	connectToServer("li1417-56.members.linode.com", 1234, "T_bot");
 	printf("You are in the server\n");
 }
 
 void InitMap(t_dataMap* dataMap, t_dataPlayer* dataPlayer, t_dataTracks* dataTracks){
 	/* Init the map and bot*/
 	
-	waitForT2RGame( "TRAINING NICE_BOT map=USA timeout=10000", dataMap->gameName, &dataMap->nbCities, &dataMap->nbTracks);	
+	waitForT2RGame( "TOURNAMENT EISE3 map=USA timeout=10000", dataMap->gameName, &dataMap->nbCities, &dataMap->nbTracks);	
 	printf("Game name = %s\n", dataMap->gameName);	
 	printf("nbCities = %d, nbTracks = %d\n\n", dataMap->nbCities, dataMap->nbTracks);
 	

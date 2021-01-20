@@ -30,9 +30,9 @@ typedef struct{
 
 typedef struct{
 	
-	int lengthTracks[36][36];
-	t_color colorTracks[36][36];
-	int doubleTracks[36][36];
-	int takenTracks[36][36];		/* 1 if the city is taken by us, -1 if the citty is taken by the opponent, else 0 */
+	int lengthTracks[35][35];
+	t_color colorTracks[35][35];
+	int doubleTracks[35][35];
+	int takenTracks[35][35];		/* 1 if the city is taken by us, -1 if the citty is taken by the opponent, else 0 */
 }t_dataTracks;
 	

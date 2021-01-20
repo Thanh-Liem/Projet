@@ -26,7 +26,7 @@ int main(){
 	
 	do{
 	
-		InitMap(&dataMap, &dataPlayer, &dataTracks)
+		InitMap(&dataMap, &dataPlayer, &dataTracks);
 		InitTracks(&dataMap, &dataTracks, Bestpath);
 		InitPlayer(&dataPlayer, &dataMap);
 
@@ -62,10 +62,7 @@ int main(){
 			CheckCompletedObjective(&dataPlayer, dataTracks, Bestpath);		
 
 		}while(return_code == NORMAL_MOVE);
-		
-	}while(1);
-		
-		
+			
 		
 	if( (return_code == WINNING_MOVE && dataPlayer.PlayerWhoPlay == dataPlayer.num_player) || (return_code == LOOSING_MOVE && dataPlayer.PlayerWhoPlay != dataPlayer.num_player)){
 		printf(" We win !\n");
@@ -73,7 +70,8 @@ int main(){
 	else{
 		printf(" We lose !\n");
 	}
-			
+	}while(1);		
+	
 	/* Disconnect from server */
 	closeConnection();
 	printf("Close Success\n");
